@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 
-const likeButton = () => {
+function LikeButton() {
+    const [counter, setCounter] = useState(100);
+
     return (
-        <button>
-            Like | 100
+        <button onClick={() => setCounter(counter + 1)}>
+            Like | {counter}
         </button>
     )
-};
+}
 
-export default likeButton;
+export default LikeButton;
