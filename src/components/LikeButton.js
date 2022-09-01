@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 
 function LikeButton() {
-    const [counter, setCounter] = useState(100);
+    const [like, setLike] = useState(false);
+    const currentLike = 100;
 
     return (
-        <button onClick={() => setCounter(counter + 1)}>
-            Like | {counter}
+        <button className="like-button" onClick={() => setLike((prevLike) => !prevLike)}>
+            Like | <span className="likes-counter">{like ? currentLike + 1 : currentLike}</span>
         </button>
     )
 }
